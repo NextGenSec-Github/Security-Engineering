@@ -121,4 +121,29 @@ action protocol source_ip/source_port -> destination_ip/destination_port (option
    **Example Rule:**
    ```plaintext
    alert tcp any any -> any 22 (msg:"SSH Brute Force Attempt"; content:"Failed password";)
+   ```
+   This rule triggers an alert for potential SSH brute force attempts.
 
+2. **Network Forensics:**
+   The detailed logging capabilities of Snort aid in post-incident analysis and forensic investigations.   
+   **Example Rule:**
+   ```plaintext
+   output alert_unified: alert.ids, limit 128, nostamp, rawbytes
+   ```
+   Configures Snort to log unified format alerts with raw packet bytes for forensic analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
