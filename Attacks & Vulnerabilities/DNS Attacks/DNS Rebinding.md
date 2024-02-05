@@ -32,6 +32,8 @@ DNS Rebinding is a technique used in cyber attacks to bypass the same-origin pol
 - **Bypassing Same-Origin Policy:**
   - The attacker's server responds with malicious content, allowing them to bypass the browser's same-origin policy and potentially execute malicious code.
 
+![](https://github.com/NextGenSec-Github/Security-Engineering/assets/142174128/901d5dd4-6118-457e-839e-8abb381dc1b7)
+
 ## 3. Implications of DNS Rebinding
 
 - **Data Theft:**
