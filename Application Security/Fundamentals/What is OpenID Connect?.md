@@ -52,6 +52,9 @@ OpenID Connect (OIDC) is an identity layer built on top of the OAuth 2.0 protoco
 
 ### 1. Authorization Code Flow
 
+![](https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2023/01/11/img1-1024x552.png)
+
+
 - **Description:** Similar to OAuth 2.0 Authorization Code Flow, but with the addition of an ID token.
 
 - **Example Steps:**
