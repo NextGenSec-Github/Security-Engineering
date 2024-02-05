@@ -14,3 +14,10 @@ alert udp $EXTERNAL_NET 53 -> $HOME_NET any (msg:"Possible DNS Spoofing - Mismat
 
 # Rule to detect DNS response with a mismatched additional section
 alert udp $EXTERNAL_NET 53 -> $HOME_NET any (msg:"Possible DNS Spoofing - Mismatched Additional Section"; content:"|00 00 00 00|"; depth:4; offset:28; sid:700005;)
+
+_____________
+NOTE
+_____________
+# Customize the $EXTERNAL_NET and $HOME_NET variables according to your network configuration.
+# These rules are basic examples and may generate false positives based on legitimate DNS responses. Fine-tune the rules based on your network's normal behavior.
+# DNS spoofing detection may involve more sophisticated techniques, and these rules may need adjustment based on specific DNS deployment scenarios.
