@@ -41,7 +41,7 @@ Content-Type: image/jpeg
 
 If the server processes this request and tries to fetch the image from the manipulated URL, SSRF occurs.
 
-# Exploiting Internal Services
+## Exploiting Internal Services
 An attacker might manipulate a URL to access internal services, such as:
 
 ```http
@@ -49,6 +49,18 @@ GET http://internal-service.local/api/ sensitive-data HTTP/1.1
 Host: example.com
 ```
 
+Here, the attacker is attempting to access sensitive data from an internal service.
+
+## Detection and Prevention
+
+### Detection
+1. Monitor and analyze outgoing network requests for unusual patterns.
+2. Use web application firewalls (WAFs) to detect and block malicious requests.
+
+### Prevention
+1. Validate and sanitize user input, especially URLs and file uploads.
+2. Employ strong access controls to limit the server's ability to make requests to external resources.
+3. Utilize whitelists to restrict the allowed destinations for outgoing requests.
 
 
 
