@@ -97,9 +97,17 @@ Snort, developed by Sourcefire, is a powerful open-source Intrusion Detection an
      Sends Snort alerts to the syslog facility LOG_AUTH with severity LOG_ALERT.
 
 ## Rule Structure
-
+![](https://github.com/NextGenSec-Github/Security-Engineering/assets/142174128/21a05d36-4d53-4e97-80fe-14404f769fd3)
 A Snort rule follows a specific structure:
 
 ```plaintext
 action protocol source_ip/source_port -> destination_ip/destination_port (options)
+```
 
+**Action:** Specifies the action to take when the rule matches (e.g., alert, log, drop).
+
+**Protocol:** Defines the network protocol being monitored (e.g., TCP, UDP).
+
+**Source/Destination IP and Port:** Specifies the source and destination addresses and ports.
+
+**Options:** Additional parameters and conditions for rule matching.
