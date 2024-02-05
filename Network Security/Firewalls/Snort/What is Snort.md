@@ -112,3 +112,13 @@ action protocol source_ip/source_port -> destination_ip/destination_port (option
 **Source/Destination IP and Port:** Specifies the source and destination addresses and ports.
 
 **Options:** Additional parameters and conditions for rule matching.
+
+# Use Cases
+
+1. **Intrusion Detection:**
+   Snort identifies and alerts on suspicious network activity, helping to detect and respond to potential security incidents.
+   
+   **Example Rule:**
+   ```plaintext
+   alert tcp any any -> any 22 (msg:"SSH Brute Force Attempt"; content:"Failed password";)
+
