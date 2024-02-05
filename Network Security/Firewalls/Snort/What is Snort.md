@@ -98,6 +98,7 @@ Snort, developed by Sourcefire, is a powerful open-source Intrusion Detection an
 
 ## Rule Structure
 ![](https://github.com/NextGenSec-Github/Security-Engineering/assets/142174128/21a05d36-4d53-4e97-80fe-14404f769fd3)
+
 A Snort rule follows a specific structure:
 
 ```plaintext
