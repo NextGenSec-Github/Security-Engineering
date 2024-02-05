@@ -41,4 +41,25 @@ Content-Type: image/jpeg
 
 If the server processes this request and tries to fetch the image from the manipulated URL, SSRF occurs.
 
+# Exploiting Internal Services
+An attacker might manipulate a URL to access internal services, such as:
+
+```http
+GET http://internal-service.local/api/ sensitive-data HTTP/1.1
+Host: example.com
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
