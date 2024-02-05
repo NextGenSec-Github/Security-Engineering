@@ -27,6 +27,10 @@ Server-Side Request Forgery (SSRF) vulnerabilities pose a significant risk to we
 - **Example:**
   - If an application accepts a URL parameter, use regular expressions or URL parsing libraries to ensure it conforms to a valid URL structure.
 
+
+- **Code Example:**
+  
+
 ## 3. Access Controls
 
 - **Description:**
