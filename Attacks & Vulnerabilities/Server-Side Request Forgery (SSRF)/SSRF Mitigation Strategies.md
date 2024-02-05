@@ -29,6 +29,45 @@ Server-Side Request Forgery (SSRF) vulnerabilities pose a significant risk to we
 
 
 - **Code Example:**
+```python
+from flask import Flask, request, jsonify
+import re
+import requests
+
+app = Flask(__name__)
+
+# Function to validate URL input
+def is_valid_url(url):
+    # Simple URL validation using regex
+    url_pattern = re.compile(
+        r'^(http|https)://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    )
+    return bool(re.match(url_pattern, url))
+
+@app.route('/fetch', methods=['POST'])
+def fetch_data():
+    data = request.json
+
+    # Ensure the 'url' parameter is present
+    if 'url' not in data:
+        return jsonify({'error': 'Missing "url" parameter'}), 400
+
+    url = data['url']
+
+    # Validate the URL
+    if not is_valid_url(url):
+        return jsonify({'error': 'Invalid URL format'}), 400
+
+    try:
+        # Perform the request only if the URL is valid
+        response = requests.get(url)
+        return jsonify({'data': response.text})
+    except requests.RequestException as e:
+        return jsonify({'error': f'Request failed: {str(e)}'}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
   
 
 ## 3. Access Controls
