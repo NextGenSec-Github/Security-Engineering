@@ -40,6 +40,8 @@ OAuth 2.0 (Open Authorization 2.0) is an open standard protocol that allows secu
 
 - **Description:** The URI to which the authorization server redirects the user-agent (browser) after the resource owner grants/denies permission.
 
+![](https://miro.medium.com/v2/resize:fit:569/1*1JfhOOx4G0Sw5urDZcKcgA.png)
+
 ## OAuth 2.0 Flows
 
 ### 1. Authorization Code Flow
