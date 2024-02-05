@@ -37,3 +37,8 @@ Content-Type: image/jpeg
 
 [Malicious Content]
 -----------------------------12345678901234567890--
+```
+
+If the server processes this request and tries to fetch the image from the manipulated URL, SSRF occurs.
+
+
