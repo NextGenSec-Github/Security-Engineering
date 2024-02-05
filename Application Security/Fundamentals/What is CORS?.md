@@ -37,4 +37,65 @@ Access-Control-Request-Headers: Content-Type, Authorization
 - **Description:** Servers include CORS-specific headers in their responses to inform browsers about the permissions granted for cross-origin requests.
 
 - **Example:**
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://example.com
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Headers: Content-Type, Authorization
+```
 
+### 3. Simple Requests
+
+- **Description:** Simple requests, such as GET or POST with specific content types, do not trigger a preflight request. The browser automatically includes the `Origin` header, and the server responds with appropriate CORS headers.
+
+## CORS Headers Explained
+
+### 1. `Access-Control-Allow-Origin`
+
+- **Description:** Specifies which origins are allowed to access the resource. It can be a specific origin, a comma-separated list, or a wildcard (`*`) for any origin.
+
+### 2. `Access-Control-Allow-Methods`
+
+- **Description:** Indicates the HTTP methods (e.g., GET, POST, PUT) allowed when accessing the resource.
+
+### 3. `Access-Control-Allow-Headers`
+
+- **Description:** Lists the HTTP headers that can be used when making the actual request.
+
+### 4. `Access-Control-Allow-Credentials`
+
+- **Description:** Indicates whether the browser should include credentials (such as cookies or HTTP authentication) when making the actual request.
+
+### 5. `Access-Control-Expose-Headers`
+
+- **Description:** Lists the headers that the browser should expose to the web page when the response is received.
+
+### 6. `Access-Control-Max-Age`
+
+- **Description:** Specifies how long (in seconds) the results of a preflight request can be cached.
+
+## Handling CORS on the Server
+
+- **Description:** Server-side implementation of CORS involves configuring the server to include the appropriate CORS headers based on the incoming requests.
+
+- **Example (Node.js with Express):**
+```javascript
+const express = require('express');
+const app = express();
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://example.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+// Your routes and middleware come here
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
+# Conclusion
+Understanding CORS is essential for web developers working on applications that make cross-origin requests. Proper implementation ensures secure and controlled communication between web pages and servers, enhancing the overall security of web applications.
