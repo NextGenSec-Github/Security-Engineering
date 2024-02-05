@@ -17,3 +17,10 @@ alert tcp $EXTERNAL_NET any -> $HOME_NET 110 (msg:"Possible POP3 Brute Force Att
 
 # Rule to detect repeated failed login attempts in IMAP traffic
 alert tcp $EXTERNAL_NET any -> $HOME_NET 143 (msg:"Possible IMAP Brute Force Attempt"; flow:to_server,established; content:"NO Login failed"; sid:500006;)
+
+_____________
+NOTE
+_____________
+# Customize the $EXTERNAL_NET, $HOME_NET, $HTTP_SERVERS, and $HTTP_PORTS variables according to your network configuration.
+# These rules are basic examples and may need adjustment based on the specific application and authentication mechanisms you want to protect.
+# Brute force attacks may involve various protocols and attack vectors. Consider extending and adapting these rules to cover additional services as needed.
