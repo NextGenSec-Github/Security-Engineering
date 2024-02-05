@@ -46,6 +46,8 @@ OAuth 2.0 (Open Authorization 2.0) is an open standard protocol that allows secu
 
 ### 1. Authorization Code Flow
 
+![](https://assets.digitalocean.com/articles/oauth/abstract_flow.png)
+
 - **Description:** The most common flow where the client obtains an authorization code and exchanges it for an access token.
 
 - **Example Steps:**
