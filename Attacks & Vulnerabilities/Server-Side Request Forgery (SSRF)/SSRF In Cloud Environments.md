@@ -66,7 +66,4 @@ Server-Side Request Forgery (SSRF) vulnerabilities in cloud environments can hav
   - Implement strict access controls on S3 buckets and use AWS IAM policies to limit access.
 
 ## 6. References
-
-- [AWS SSRF Documentation](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp-controls.html#fsbp-ssrf-003)
-- [Cloud Security Alliance - SSRF in the Cloud](https://cloudsecurityalliance.org/artifacts/ssrf-10-best-practices/)
 - [OWASP SSRF Guide](https://owasp.org/www-community/attacks/Server_Side_Request_Forgery)
