@@ -9,3 +9,9 @@ alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"Potential CSRF in
 # Rule to detect potential CSRF attacks in generic TCP traffic
 alert tcp $EXTERNAL_NET any -> $HOME_NET any (msg:"Potential CSRF in Generic TCP Traffic"; flow:to_server,established; pcre:"/csrf_token=/i"; payload; sid:400003;)
 
+_____________
+NOTE
+_____________
+# Customize the $EXTERNAL_NET, $HTTP_SERVERS, $HTTP_PORTS, and $HOME_NET variables according to your network configuration.
+# These rules are basic examples and may generate false positives. Fine-tune them based on your specific web application and usage patterns.
+# CSRF attacks are typically more effectively mitigated through the implementation of anti-CSRF tokens, SameSite cookie attributes, and secure coding practices.
