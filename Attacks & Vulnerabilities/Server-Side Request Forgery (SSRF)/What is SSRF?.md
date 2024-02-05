@@ -62,8 +62,12 @@ Here, the attacker is attempting to access sensitive data from an internal servi
 2. Employ strong access controls to limit the server's ability to make requests to external resources.
 3. Utilize whitelists to restrict the allowed destinations for outgoing requests.
 
+## Impact
+The impact of SSRF can be severe, including:
 
-
+- Unauthorized access to internal resources.
+- Exposure of sensitive data.
+- Service disruption or denial of service.
 
 
 
