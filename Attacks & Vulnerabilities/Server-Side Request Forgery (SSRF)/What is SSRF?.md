@@ -70,7 +70,9 @@ The impact of SSRF can be severe, including:
 - Service disruption or denial of service.
 
 
-
+## References
+[OWASP SSRF](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
+[PortSwigger SSRF](https://portswigger.net/web-security/ssrf)
 
 
 
