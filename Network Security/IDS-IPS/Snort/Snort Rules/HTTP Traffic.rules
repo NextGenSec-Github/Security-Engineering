@@ -18,6 +18,41 @@ alert tcp any any -> any any (msg:"Large HTTP POST Request Detected"; flow:to_se
 # Rule to detect HTTP traffic to suspicious file extensions:
 alert tcp any any -> any any (msg:"HTTP Traffic to Suspicious File Extension"; flow:to_server,established; content:".php"; http_uri; pcre:"/\.((php|aspx|jsp|cgi)|\d{3,4})/i"; sid:1005; rev:1;)
 
+# Rule to detect HTTP traffic to suspicious IP addresses:
+alert tcp any any -> [suspicious_ip_addresses]/32 any (msg:"HTTP Traffic to Suspicious IP Address"; flow:to_server,established; content:"HTTP/1."; content:"Host|3A 20|"; within:25; pcre:"/(\b(192\.168|10\.0)\b)/"; sid:1006; rev:1;)
+
+# Rule to detect HTTP traffic with large cookie headers:
+alert tcp any any -> any any (msg:"HTTP Traffic with Large Cookie Header"; flow:to_server,established; http_header; content:"Cookie|3A 20|"; pcre:"/Cookie\s*:\s*(\w+\=[^\;]*\;){10,}/i"; sid:1007; rev:1;)
+
+# Rule to detect HTTP traffic to known phishing URLs:
+alert tcp any any -> any any (msg:"HTTP Traffic to Known Phishing URL"; flow:to_server,established; content:"Host|3A 20|"; http_header; pcre:"/\b(phishing|login|account|security)\b/i"; sid:1008; rev:1;)
+
+# Rule to detect HTTP traffic with large file uploads:
+alert tcp any any -> any any (msg:"HTTP Traffic with Large File Upload"; flow:to_server,established; http_method; content:"POST"; http_uri; content:"Content-Length"; depth:15; pcre:"/^Content-Length\s*:\s*[0-9]{6,}$/"; threshold:type both,track by_src,count 5,seconds 60; sid:1009; rev:1;)
+
+# Rule to detect HTTP traffic with suspicious referer headers:
+alert tcp any any -> any any (msg:"HTTP Traffic with Suspicious Referer Header"; flow:to_server,established; http_header; content:"Referer|3A 20|"; pcre:"/\b(phishing|login|account|security)\b/i"; sid:1010; rev:1;)
+
+# Rule to detect HTTP traffic with suspicious query parameters:
+alert tcp any any -> any any (msg:"HTTP Traffic with Suspicious Query Parameter"; flow:to_server,established; http_uri; pcre:"/\b(script|alert|confirm|prompt|onclick)\b/i"; sid:1011; rev:1;)
+
+# Rule to detect HTTP traffic to suspicious URL paths:
+alert tcp any any -> any any (msg:"HTTP Traffic to Suspicious URL Path"; flow:to_server,established; http_uri; pcre:"/\/(\w+\.\w{2,}|index\.\w{2,}|phpmyadmin|admin|wp-admin)/i"; sid:1012; rev:1;)
+
+# Rule to detect HTTP traffic with suspicious user credentials:
+alert tcp any any -> any any (msg:"HTTP Traffic with Suspicious User Credentials"; flow:to_server,established; http_header; content:"Authorization|3A 20|"; pcre:"/(\badmin\b|\broot\b)/i"; sid:1013; rev:1;)
+
+# Rule to detect HTTP traffic with suspicious HTTP request methods:
+alert tcp any any -> any any (msg:"HTTP Traffic with Suspicious HTTP Request Method"; flow:to_server,established; http_method; pcre:"/(\bDELETE\b|\bTRACE\b|\bCONNECT\b)/i"; sid:1014; rev:1;)
+
+# Rule to detect HTTP traffic with suspicious HTTP version strings:
+alert tcp any any -> any any (msg:"HTTP Traffic with Suspicious HTTP Version String"; flow:to_server,established; http_header; content:"HTTP/"; pcre:"/^(HTTP\/1\.0|HTTP\/0\.9)/"; sid:1015; rev:1;)
+
+
+
+
+
+
 
 
 
