@@ -1,0 +1,25 @@
+# | HTTP RULES |
+
+# Rule to detect HTTP traffic to suspicious domain names: pcre:
+alert tcp any any -> any any (msg:"HTTP Traffic to Suspicious Domain Name"; flow:to_server,established; content:"Host|3A 20|"; http_header; pcre:"/(\bmalware\b|\btrojan\b|\bspam\b|\bscam\b|\bspyware\b)/i"; sid:1000; rev:1;)
+
+# Rule to detect HTTP traffic to a known malicious domain:
+alert tcp any any -> any any (msg:"Malicious HTTP traffic to known malicious domain"; flow:to_server,established; content:"Host: maliciousdomain.com"; http_header; sid:1001; rev:1;)
+
+# Rule to detect HTTP requests with a high number of parameters:
+alert tcp any any -> any any (msg:"HTTP Request with High Number of Parameters"; flow:to_server,established; http_method; content:"?"; http_uri; pcre:"/^([^\?\n]{0,255}\?){6,}/U"; sid:1002; rev:1;)
+
+# Rule to detect HTTP traffic to suspicious user-agents:
+alert tcp any any -> any any (msg:"HTTP Traffic to Suspicious User-Agent"; flow:to_server,established; http_header; content:"User-Agent|3A 20|"; pcre:"/(\b(BlackWidow|wget|nikto|sqlmap|metasploit|curl|libwww-perl)\b)/i"; sid:1003; rev:1;)
+
+# Rule to detect HTTP traffic with large POST requests:
+alert tcp any any -> any any (msg:"Large HTTP POST Request Detected"; flow:to_server,established; http_method; content:"POST"; http_uri; content:"Content-Length"; depth:15; pcre:"/^Content-Length\s*:\s*[0-9]{4,}$/"; threshold:type both,track by_src,count 5,seconds 60; sid:1004; rev:1;)
+
+# Rule to detect HTTP traffic to suspicious file extensions:
+alert tcp any any -> any any (msg:"HTTP Traffic to Suspicious File Extension"; flow:to_server,established; content:".php"; http_uri; pcre:"/\.((php|aspx|jsp|cgi)|\d{3,4})/i"; sid:1005; rev:1;)
+
+
+
+
+
+
