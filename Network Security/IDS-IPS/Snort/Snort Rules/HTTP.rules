@@ -1,1 +1,7 @@
+# | HTTP RULES |
+
+# Rule to detect HTTP traffic to suspicious domain names: pcre:"/(\bmalware\b|\btrojan\b|\bspam\b|\bscam\b|\bspyware\b)/i";: This is a PCRE (Perl Compatible Regular Expression) pattern match. It searches for any of the specified terms (malware, trojan, spam, scam, spyware) within word boundaries (\b)
+alert tcp any any -> any any (msg:"HTTP Traffic to Suspicious Domain Name"; flow:to_server,established; content:"Host|3A 20|"; http_header; pcre:"/(\bmalware\b|\btrojan\b|\bspam\b|\bscam\b|\bspyware\b)/i"; sid:10047; rev:1;)
+
+
 
