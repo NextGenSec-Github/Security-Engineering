@@ -9,8 +9,7 @@ sudo snort -A full -r my.pcap -c local.rules -l . #Investigating a pcap file
 
 sudo snort -r ,snort.log.file> #reading dumped log file
 
-
-
+sudo snort -r snort.log.1688562201 -n 65 # Read a log file with a certain threshold of logs
 
 sudo nano local.rules #editing the local rule with a text editor, nano
 
