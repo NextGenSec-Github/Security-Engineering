@@ -36,5 +36,74 @@ NOTE: If you are having errors connecting, check your instance's security group 
 
 ## Step 3: Install Snort
 
+1. Update the package repository:
+```bash
+sudo apt update
+```
+
+2. Install Snort using the following command:
+```bash
+sudo apt install -y snort
+```
+
+3. During the installation process, you will be prompted to configure the Snort package and any network settings, just press enter for now, as these settings are always configurable in /etc/snort.conf . Choose the appropriate configuration options based on your requirements.
+
+4. Confirm the installation by checking the Snort version:
+```bash
+snort -V
+```
+
+## Step 4: Configure Snort
+
+1. Navigate to the Snort configuration directory:
+
+```bash
+cd /etc/snort/
+```
+
+2. Edit the snort.conf configuration file using a text editor:
+
+```bash
+sudo nano snort.conf
+```
+
+3. Configure Snort rules and options according to your requirements. Ensure to enable rules for the types of attacks you want to detect.
+
+4. Save the changes and exit the text editor. ctrl+o = save, ctrl+x = exit
+
+## Step 5: Start Snort
+
+1. Start the Snort service:
+```bash
+sudo systemctl start snort
+```
+
+## Step 6: Verify Snort Installation
+
+1. Check the Snort status to ensure it's running without errors:
+
+```bash
+sudo systemctl status snort
+```
+
+2. Test Snort by generating some network traffic or using Snort's test rules.
+
+# Conclusion
+You have successfully set up Snort on an Ubuntu EC2 instance. You can now monitor network traffic for potential security threats. Make sure to regularly update Snort rules and review logs for any suspicious activity.
+
+This documentation provides a basic setup for Snort. Depending on your specific use case and requirements, you may need to further customize the configuration and ruleset. Refer to the Snort documentation for more advanced configurations and usage scenarios.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
