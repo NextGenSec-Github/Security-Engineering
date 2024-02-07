@@ -1,0 +1,1 @@
+- [What is OAuth 2.0 - Auth0](https://auth0.com/intro-to-iam/what-is-oauth-2)
