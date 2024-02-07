@@ -1,1 +1,2 @@
 - [What is Public Key Infrastructure? - By Okta](https://www.okta.com/identity-101/public-key-infrastructure/)
+- [What is PKI? - By KEYFACTOR](https://www.keyfactor.com/education-center/what-is-pki/)
