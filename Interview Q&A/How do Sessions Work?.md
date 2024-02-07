@@ -1,0 +1,1 @@
+- [What Are Sessions? How Do They Work?](https://www.baeldung.com/cs/web-sessions#:~:text=When%20a%20user%20visits%20a,logs%20in%20to%20a%20website.)
