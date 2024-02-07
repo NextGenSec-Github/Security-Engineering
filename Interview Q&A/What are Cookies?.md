@@ -1,1 +1,1 @@
-- [](https://www.cloudflare.com/learning/privacy/what-are-cookies/#:~:text=Authentication%20cookies%20help%20manage%20user,with%20a%20cookie%20identifier%20string.)
+- [What are cookies? - Cloudflare](https://www.cloudflare.com/learning/privacy/what-are-cookies/#:~:text=Authentication%20cookies%20help%20manage%20user,with%20a%20cookie%20identifier%20string.)
