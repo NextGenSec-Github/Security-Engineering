@@ -22,6 +22,8 @@ There are several types of cookies, each serving different purposes:
 
 6. **Third-party Cookies**: These cookies are set by domains other than the one the user is visiting. They are often used for tracking and advertising purposes.
 
+7. **Authentication cookies**: Authentication cookies help manage user sessions; they are generated when a user logs into an account via their browser. They ensure that sensitive information is delivered to the correct user sessions by associating user account information with a cookie identifier string.
+
 ## Examples of Cookies
 
 ### Example 1: Login Authentication
