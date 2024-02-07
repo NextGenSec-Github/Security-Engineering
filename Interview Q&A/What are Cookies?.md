@@ -16,9 +16,11 @@ There are several types of cookies, each serving different purposes:
 
 3. **Secure Cookies**: Secure cookies are only sent over secure (HTTPS) connections, making them less vulnerable to interception by third parties.
 
-4. **HttpOnly Cookies**: HttpOnly cookies are inaccessible to JavaScript, which helps prevent certain types of cross-site scripting (XSS) attacks.
+4. **Zombie cookies**: Like the "zombies" of popular fiction, zombie cookies regenerate after they are deleted. Zombie cookies create backup versions of themselves outside of a browser's typical cookie storage location. They use these backups to reappear within a browser after they are deleted. Zombie cookies are sometimes used by unscrupulous ad networks, and even by cyber attackers.****
 
-5. **Third-party Cookies**: These cookies are set by domains other than the one the user is visiting. They are often used for tracking and advertising purposes.
+5. **HttpOnly Cookies**: HttpOnly cookies are inaccessible to JavaScript, which helps prevent certain types of cross-site scripting (XSS) attacks.
+
+6. **Third-party Cookies**: These cookies are set by domains other than the one the user is visiting. They are often used for tracking and advertising purposes.
 
 ## Examples of Cookies
 
