@@ -18,3 +18,8 @@ cat alert # reading the contents of the alert file
 sudo rm alert #deleting the alert file
 
 sudo rm <snort.log.file> #deleting the log file
+
+# Start Snort in Sniffer Mode
+snort -q -dev -i eth0
+
+
