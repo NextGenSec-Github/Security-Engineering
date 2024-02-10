@@ -20,6 +20,11 @@ sudo rm alert #deleting the alert file
 sudo rm <snort.log.file> #deleting the log file
 
 # Start Snort in Sniffer Mode
-snort -q -dev -i eth0
+snort -v -i <interface> -q -A console
 
+# Use Snort's console mode to test your rule:
 
+snort -A console -q -c <path_to_snort_conf> -i <interface>
+
+# Run Snort in IPS mode:
+snort -A full -q -c <path_to_snort_conf> -i <interface>
