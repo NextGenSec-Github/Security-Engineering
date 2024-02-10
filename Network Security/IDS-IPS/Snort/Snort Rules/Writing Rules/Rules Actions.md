@@ -13,3 +13,19 @@
 `rewrite` -> enables overwrite packet contents based on a "replace" option in the rules
 
 The desired action for a given rule is the very first thing declared in a rule.
+
+## #Examples
+
+#### Alert: 
+```bash
+alert http (msg:"Generate an alert"; sid:1;)
+```
+#### Drop
+```bash
+drop http (msg:"Drop this packet"; sid:2;)
+```
+
+#### Block
+```bash
+block http (msg:"Block this packet and subsequent ones"; sid:3;)
+```
