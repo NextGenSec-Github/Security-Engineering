@@ -14,7 +14,7 @@
 
 The desired action for a given rule is the very first thing declared in a rule.
 
-## #Examples
+## Examples
 
 #### Alert: 
 ```bash
