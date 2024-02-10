@@ -2,6 +2,9 @@
 
 Snort, developed by Sourcefire, is a powerful open-source Intrusion Detection and Prevention System (IDPS) that plays a pivotal role in enhancing network security. It provides real-time traffic analysis, packet logging, and signature-based detection to identify and prevent a wide range of security threats.
 
+## NOTE: 
+- A lot of the docs in this Snort folder are referenced and taken from the Official Snort Documentation over here: [Official Snort Documentation](https://docs.snort.org/intro)
+
 ## Key Features
 
 ### 1. **Packet Sniffing:**
