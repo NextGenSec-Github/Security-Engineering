@@ -35,3 +35,13 @@ SELECT * FROM Employees WHERE Salary > 55000.00;
 
 -- Select the average salary of employees
 SELECT AVG(Salary) AS AverageSalary FROM Employees;
+
+-- The % is a wild-card it can match any characters. E.g. In this case any data starting with 'D'
+SELECT * FROM Employees;
+  WHERE data LIKE 'D%'
+
+
+
+
+
+
