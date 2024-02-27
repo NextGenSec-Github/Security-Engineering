@@ -62,6 +62,62 @@ dns.qry.name == "google.com"
 
 
 
+# FLAGS
+# TCP Flags:
+
+#Global Search
+tcp
+
+# Only SYN Flag
+tcp.flags == 2
+
+# SYN flag is set. The rest of the bits are not important.
+tcp.flags.syn == 1
+
+# Only ACK Flag
+tcp.flags == 16
+
+# ACK flag is set. The rest of the bits are not important.
+tcp.flags.ack == 1
+
+# Only SYN, ACK flags.
+tcp.flags == 18
+
+# SYN and ACK are set. The rest of the bits are not important.
+(tcp.flags.syn == 1) and (tcp.flags.ack == 1)
+
+# Only RST flag.
+tcp.flags == 4
+
+# RST flag is set. The rest of the bits are not important.
+tcp.flags.rst == 1
+
+# Only RST, ACK flags.
+tcp.flags == 20
+
+# RST and ACK are set. The rest of the bits are not important.
+(tcp.flags.reset == 1) and (tcp.flags.ack == 1)
+
+# Only FIN flag
+tcp.flags == 1
+
+# FIN flag is set. The rest of the bits are not important.
+tcp.flags.fin == 1
+
+# TCP Connect scan patterns
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024 
+
+# Shows the TCP SYN scan patterns
+tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size <= 1024  
+
+
+
+
+
+
+
+
+
 
 
 
