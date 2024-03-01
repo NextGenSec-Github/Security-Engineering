@@ -146,6 +146,35 @@ dhcp.option.dhcp == 5
 # NAK Responses (DENIED DHCP REQUESTS)
 dhcp.option.dhcp == 6
 
+# NETBIOS
+
+# Global NetBios Search
+nbns
+
+# Filters packets based on whether the name contains the specified keyword
+nbns.name contains "keyword"
+
+# KERBEROS
+
+# Global Kerberos Search
+kerberos
+
+# Filters packets based on whether the Kerberos CNameString contains the specified keyword.
+kerberos.CNameString contains "keyword"
+
+# Filter out computer-related authentication events, focusing more on user authentication activities
+kerberos.CNameString and !(kerberos.CNameString contains "$" )
+
+# pvno: Protocol version
+kerberos.pvno == 5
+
+# realm: Domain name for the generated ticket
+kerberos.realm contains ".org"
+
+# sname: Service and domain name for the generated ticket
+kerberos.SNameString == "krbtg"
+
+
 
 
 
