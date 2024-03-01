@@ -132,11 +132,19 @@ arp.duplicate-address-detected or arp.duplicate-address-frame
 ((arp) && (arp.opcode == 1)) && (arp.src.hw_mac == target-mac-address)
 
 
+# DYNAMIC HOST CONFIGURATION PROTOCOL (DHCP)
 
+# Global Search for DHCP Packets
+dhcp
 
+# DHCP Requests
+dhcp.option.dhcp == 3
 
+# ACK Responses
+dhcp.option.dhcp == 5
 
-
+# NAK Responses (DENIED DHCP REQUESTS)
+dhcp.option.dhcp == 6
 
 
 
