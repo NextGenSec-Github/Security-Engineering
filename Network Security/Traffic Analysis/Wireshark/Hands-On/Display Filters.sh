@@ -146,6 +146,9 @@ dhcp.option.dhcp == 5
 # NAK Responses (DENIED DHCP REQUESTS)
 dhcp.option.dhcp == 6
 
+# Searching for specific hostname
+dhcp.option.hostname contains "keyword"
+
 # NETBIOS
 
 # Global NetBios Search
