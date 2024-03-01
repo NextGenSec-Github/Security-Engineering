@@ -60,8 +60,6 @@ dns.qry.name == "google.com"
 # ftp.request.command
 
 
-
-
 # FLAGS
 # TCP Flags:
 
@@ -110,10 +108,28 @@ tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size > 1024
 # Shows the TCP SYN scan patterns
 tcp.flags.syn==1 and tcp.flags.ack==0 and tcp.window_size <= 1024  
 
+# Shows the UDP scan patterns
+icmp.type == 3 and icmp.code == 3
 
+# ADDRESS RESOLUTION PROTOCOL (ARP)
 
+# Global ARP Packet Search
+arp
 
+# ARP Requests
+arp.opcode == 1
 
+# ARP Responses
+arp.opcode == 2
+
+# ARP Scanning
+arp.dst.hw_mac == 00:00:00:00:00:00
+
+# Potential ARP Poisoning Detection
+arp.duplicate-address-detected or arp.duplicate-address-frame
+
+# Potential ARP Flooding Detection
+((arp) && (arp.opcode == 1)) && (arp.src.hw_mac == target-mac-address)
 
 
 
