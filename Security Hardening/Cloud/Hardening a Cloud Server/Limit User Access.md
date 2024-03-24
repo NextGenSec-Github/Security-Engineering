@@ -10,10 +10,27 @@ sudo adduser username
 Replace username with the desired username for the new account. Follow the prompts to set a password and additional information for the user.
 
 
+## Grant sudo Privileges
+Users who require administrative privileges to perform certain tasks can be granted sudo access. This allows them to execute commands with root privileges while still using their regular user accounts.
 
+To grant sudo privileges to a user, add the user to the sudo group:
+```bash
+sudo usermod -aG sudo username
+```
+Replace username with the username of the user you want to grant sudo access to.
 
+## Disable Password Authentication for sudo
+For added security, you can configure sudo to require users to authenticate using their own passwords (rather than the root password) when executing commands with sudo. This helps audit sudo usage and prevents unauthorized users from gaining root access.
 
-
+Edit the sudoers file using the visudo command:
+```bash
+sudo visudo
+```
+Look for the line that starts with %sudo and ensure that the NOPASSWD option is not set:
+```bash
+%sudo   ALL=(ALL:ALL) ALL
+```
+If you find any lines with NOPASSWD, remove that option to require password authentication.
 
 
 
