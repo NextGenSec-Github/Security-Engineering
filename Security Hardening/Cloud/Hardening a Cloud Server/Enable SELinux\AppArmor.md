@@ -27,3 +27,26 @@ Save the changes and reboot your server for SELinux to take effect:
 sudo reboot
 ```
 
+## AppArmor:
+Check if AppArmor is already installed and enabled on your system:
+```bash
+sudo aa-status
+```
+If AppArmor is not installed, you can install it using your package manager. On Ubuntu/Debian systems, you can install it with:
+```bash
+sudo apt install apparmor apparmor-utils
+```
+Enable and start the AppArmor service:
+```bash
+sudo systemctl enable apparmor
+sudo systemctl start apparmor
+```
+
+Profile Configuration:
+- For both SELinux and AppArmor, profiles define the access controls for specific applications or services. You can find predefined profiles for many common applications, but you may need to create custom profiles for your specific use cases.
+- Refer to the documentation for SELinux or AppArmor to learn how to create and manage profiles. SELinux uses semanage, sealert, and related tools, while AppArmor uses apparmor_parser and aa-genprof.
+
+
+
+
+
