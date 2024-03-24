@@ -32,6 +32,21 @@ Look for the line that starts with %sudo and ensure that the NOPASSWD option is 
 ```
 If you find any lines with NOPASSWD, remove that option to require password authentication.
 
+## Disable Unused User Accounts
+Disable any user accounts that are no longer needed to reduce the potential attack surface. This includes default system accounts and any accounts associated with former employees or users who no longer require access.
+
+You can disable a user account using the usermod command:
+```bash
+sudo usermod --expiredate 1 username
+```
+Replace username with the username of the account you want to disable.
+
+## Implement Multi-Factor Authentication (MFA)
+Consider implementing multi-factor authentication for user accounts, especially for accounts with elevated privileges. MFA adds an extra layer of security by requiring users to provide additional verification, such as a one-time code from a mobile app or a hardware token, in addition to their password.
+
+By following these steps, you can better control user access on your server and mitigate the risk of unauthorized access or misuse of privileges. Regularly review user accounts and permissions to ensure they remain aligned with the principle of least privilege and your organization's security policies.
+
+
 
 
 
