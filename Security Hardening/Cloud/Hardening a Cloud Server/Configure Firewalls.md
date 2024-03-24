@@ -29,3 +29,42 @@ Repeat this step for other services like HTTP (port 80) or HTTPS (port 443) if y
 sudo iptables-save > /etc/sysconfig/iptables
 ```
 
+## Using firewalld:
+
+1. Install firewalld (if not already installed):
+```bash
+sudo yum install firewalld     # For CentOS/RHEL
+sudo apt install firewalld     # For Ubuntu/Debian
+```
+
+2. Start and Enable firewalld:
+```bash
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+````
+
+3. Allow Services: To allow specific services, you can use predefined service names. For example, to allow SSH:
+```bash
+sudo firewall-cmd --zone=public --add-service=ssh --permanent
+```
+
+4. To allow HTTP and HTTPS:
+```bash
+sudo firewall-cmd --zone=public --add-service=http --permanent
+sudo firewall-cmd --zone=public --add-service=https --permanent
+```
+
+5. Reload firewalld:
+```bash
+sudo firewall-cmd --reload
+```
+
+6. Check Configuration:
+```bash
+sudo firewall-cmd --list-all
+```
+
+These steps will help you set up a basic firewall configuration. Remember to adjust the rules according to your specific requirements, considering which services need to be accessible from the internet and which should be restricted. Regularly review and update your firewall rules to maintain an effective security posture.
+
+
+
