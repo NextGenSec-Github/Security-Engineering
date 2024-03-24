@@ -35,6 +35,41 @@ ssh-copy-id username@server_ip
 Replace username with your username on the server and server_ip with the IP address of your server.
 
 
+## Change SSH Port: 
+Changing the default SSH port (22) can help reduce the number of automated attacks targeting SSH. Choose a non-standard port to make it harder for attackers to find your SSH service.
+
+Open the SSH configuration file again:
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+Find the line that specifies the SSH port (usually Port 22) and change the port number to your desired value (e.g., Port 2222).
+```bash
+Port 2222
+```
+
+Save the changes and restart the SSH service:
+```bash
+sudo systemctl restart sshd
+```
+
+## Disable SSH Protocol 1: 
+SSH protocol 1 is outdated and less secure than protocol 2. Ensure that only protocol 2 is enabled on your server.
+
+In the SSH configuration file, find the line Protocol and set its value to 2:
+```bash
+Protocol 2
+```
+Save the changes and restart the SSH service.
+
+These steps will help improve the security of your SSH service. Remember to test the changes carefully to avoid getting locked out of your server, especially when changing the SSH port or authentication methods.
+
+
+
+
+
+
+
 
 
 
