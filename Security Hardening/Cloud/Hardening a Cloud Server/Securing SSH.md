@@ -19,6 +19,21 @@ Save the changes and exit the text editor. Then, restart the SSH service for the
 sudo systemctl restart sshd
 ```
 
+## Use SSH Key Authentication: 
+SSH key authentication is more secure than password authentication as it eliminates the risk of brute-force attacks. Generate SSH key pairs (public and private keys) on your local machine if you haven't already done so, and then copy the public key to your server.
+
+You can generate SSH keys using the ssh-keygen command:
+```bash
+ssh-keygen -t rsa -b 4096
+```
+
+Follow the prompts to generate the keys. Then, copy the public key to your server using ssh-copy-id:
+
+```bash
+ssh-copy-id username@server_ip
+```
+Replace username with your username on the server and server_ip with the IP address of your server.
+
 
 
 
