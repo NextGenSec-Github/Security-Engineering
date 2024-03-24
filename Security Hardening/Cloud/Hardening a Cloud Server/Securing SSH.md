@@ -9,11 +9,15 @@ To disable root login via SSH, open the SSH configuration file (/etc/ssh/sshd_co
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
+Find the line that says PermitRootLogin and set its value to no:
+```bash
+PermitRootLogin no
+```
 
-
-
-
-
+Save the changes and exit the text editor. Then, restart the SSH service for the changes to take effect:
+```bash
+sudo systemctl restart sshd
+```
 
 
 
