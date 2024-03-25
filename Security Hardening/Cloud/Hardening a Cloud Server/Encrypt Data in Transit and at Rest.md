@@ -22,8 +22,30 @@ Ensure the following line is present and uncommented:
 Protocol 2
 ```
 
-
-
+### VPN Encryption:
+Set up a VPN server on your Linux server using OpenVPN:
+```bash
+sudo apt install openvpn easy-rsa
+sudo cp -r /usr/share/easy-rsa/ /etc/openvpn/
+cd /etc/openvpn/easy-rsa/
+sudo nano vars
+```
+Edit the vars file to configure your OpenVPN settings.
+```bash
+source ./vars
+./clean-all
+./build-ca
+./build-key-server server
+./build-dh
+openvpn --genkey --secret keys/ta.key
+sudo cp keys/ca.crt keys/server.crt keys/server.key keys/dh2048.pem keys/ta.key /etc/openvpn/
+sudo nano /etc/openvpn/server.conf
+```
+Edit server.conf to configure OpenVPN settings, including encryption options and network settings.
+```bash
+sudo systemctl start openvpn@server
+sudo systemctl enable openvpn@server
+```
 
 
 
