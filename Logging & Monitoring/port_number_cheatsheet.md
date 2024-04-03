@@ -41,8 +41,11 @@
 
 ### Security & Network Focused Ports
 
-* **135 (MSRPC):** A web-based interface for system administration on Unix-like systems. Its flexibility makes it popular, but also means attackers might scan for open ports running Webmin to look for vulnerable installations.
-
+* **135 (MSRPC):** Microsoft Remote Procedure Call.  Used for various Windows management functions. Historically, it has suffered from security vulnerabilities, so even if not directly exposed to the internet, its presence is something that system administrators should keep a watchful eye on.
+* **636 (LDAPS):** LDAP over SSL/TLS, offering a secure encrypted way to communicate with directory services. This is important when sensitive data is being stored or transmitted through the directory.
+* **873 (rsync):** A powerful file synchronization and backup tool. It's famous for its efficiency – it can synchronize files even if only parts have changed, saving bandwidth and time, especially across slow network connections.
+* **88 (Kerberos):** A secure network authentication protocol widely used in Windows Active Directory environments, and gaining use elsewhere. It provides mechanisms for single sign-on (SSO) and helps minimize the transmission of passwords in cleartext.
+* **1812/1813 (RADIUS):** Centralized Authentication, Authorization, and Accounting (AAA) protocol. Often used to manage access to network resources (Wi-Fi, switches, etc.). Can log authentication attempts, which is useful for security monitoring.
 
 
 
