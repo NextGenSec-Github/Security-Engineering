@@ -32,8 +32,9 @@
 * **546/547 (DHCPv6):**  DHCP for IPv6 networks.  Same function as above, adapted for the newer IP addressing standard.
 * **1701 (L2TP):** Layer 2 Tunneling Protocol - VPN protocol often used with IPSec for security.  Doesn't provide encryption itself.
 
-
-
+**Specialized Ports**
+* **8080 (HTTP - Alternative):** A very common alternative port for web servers. This is often used for testing websites during development or for running secondary websites on the same machine as a primary website (which would typically be on port 80).  Also used by some web-based administration panels, making it a potential target for attacks
+* **2082/2083 (cPanel):** Ports commonly used by the cPanel web hosting control panel. cPanel provides a graphical interface for managing websites, emails, databases, and more. Knowing these ports helps identify servers likely running cPanel and its associated services.
 
 
 
