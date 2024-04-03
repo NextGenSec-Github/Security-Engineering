@@ -2,50 +2,36 @@
 
 **Understanding Port Numbers**
 
-* Ports are like virtual doors on a computer, allowing specific types of traffic to reach specific services.
+* Ports are like virtual doors on a computer.  They allow specific types of traffic to reach specific services.
 
 **Common TCP Ports**
 
-* **20 (FTP-data):** File transfer (data)
-* **21 (FTP):** File transfer (control)
-* **22 (SSH):** Secure remote login, file transfer (_Twice 11 = secure_)
-* **3389 (RDP):** Remote Desktop (_Control a computer remotely_)
-* **23 (Telnet):** Unencrypted remote login (_Avoid if possible_)
-* **25 (SMTP):** Sending email (_Think of a mail carrier's uniform_)
-* **53 (DNS):** Translating domain names to IPs (_Internet's phonebook_)
-* **80 (HTTP):** Normal web traffic (_The basic web port_)
-* **110 (POP3):** Receiving email (older)
-* **143 (IMAP):** Receiving email (modern)
-* **443 (HTTPS):** Secure web traffic (the 'S' is for secure) 
-* **137-139 (NetBIOS):** Legacy Windows file/printer sharing (_Security risk_)
-* **161/162 (SNMP):** Network device monitoring (_Like a network checkup_)
-* **389 (LDAP):** Accessing directory services (company phonebooks) 
-* **445 (SMB):** Modern Windows file/printer sharing
-* **500 (ISAKMP):** Setting up secure connections (IPSec, VPNs)
+* **20 (FTP-data):** File Transfer Protocol (data) - Used for transferring the actual file content. Works in conjunction with port 21.
+* **21 (FTP):** File Transfer Protocol (control) - Handles commands, directory listings, authentication, etc. Works in conjunction with port 20.
+* **22 (SSH):** Secure Shell - Provides encrypted remote login, file transfer, terminal sessions, and other functionality. Replaces insecure protocols like Telnet.
+* **23 (Telnet):** Unencrypted remote login.  Transmits everything in cleartext, making it highly insecure. Avoid unless absolutely necessary in isolated environments.
+* **25 (SMTP):** Simple Mail Transfer Protocol - The standard for sending email between mail servers.
+* **53 (DNS):** Domain Name System - Translates human-readable domain names (like google.com) into IP addresses computers understand.  Essential for most internet functions.
+* **80 (HTTP):** Hypertext Transfer Protocol - The foundation of web browsing. Transmits unencrypted web page data.
+* **110 (POP3):** Post Office Protocol (v3) - Older protocol for retrieving email from a mail server. Typically stores messages only temporarily.
+* **143 (IMAP):** Internet Message Access Protocol - A more modern mailbox protocol. Allows for managing email on the server, multiple folders, etc.
+* **443 (HTTPS):** HTTP Secure - HTTP with added encryption (TLS/SSL). Used for secure web traffic (e-commerce, banking, etc.)
+* **137-139 (NetBIOS):** Legacy Windows services, primarily file/printer sharing.  Prone to security exploits, and replaced by SMB in modern systems.
+* **161/162 (SNMP):** Simple Network Management Protocol - Standard for monitoring and managing network devices (routers, switches, etc.) Transmits device status information.
+* **389 (LDAP):** Lightweight Directory Access Protocol -  Used to query and interact with directory services (e.g., company-wide contacts). Similar to searching a phonebook. 
+* **445 (SMB):** Server Message Block -  Modern Windows file/printer sharing, and various remote administration functions. 
+* **500 (ISAKMP):** Internet Security Association and Key Management Protocol - Used to establish security associations and cryptographic keys for secure communications (IPSec, VPNs).
+* **3389 (RDP):** Remote Desktop Protocol - Allows graphical remote control of another computer over a network.
 
 **Common UDP Ports**
 
-* **53 (DNS):** Same as TCP, but faster for small lookups
-* **67/68 (DHCP):**  Getting IP addresses automatically 
-* **69 (TFTP):** Simple file transfer (_Trivial = simple_)
-* **123 (NTP):**  Synchronizing clocks 
-* **546/547 (DHCPv6):**  Getting IP addresses automatically (IPv6) 
-* **1701 (L2TP):**  VPN tunneling protocol
+* **53 (DNS):** Same functionality as TCP, but UDP is faster for small domain lookups where reliability is less necessary.
+* **67/68 (DHCP):** Dynamic Host Configuration Protocol - Handles automatic assignment of IP addresses, saving manual configuration on large networks. 
+* **69 (TFTP):** Trivial File Transfer Protocol - Very basic, less overhead than FTP. Used for bootstrapping network devices or simple file transfers where security isn't primary.
+* **123 (NTP):** Network Time Protocol - Synchronizes computer clocks over a network. Important for accurate timestamps and many applications.
+* **546/547 (DHCPv6):**  DHCP for IPv6 networks.  Same function as above, adapted for the newer IP addressing standard.
+* **1701 (L2TP):** Layer 2 Tunneling Protocol - VPN protocol often used with IPSec for security.  Doesn't provide encryption itself.
 
-**Additional Ports**
-
-* **631 (IPP):** Internet Printing Protocol 
-* **993 (IMAPS):** Secure email receiving (IMAP over SSL/TLS)
-* **995 (POP3S):** Secure email receiving (POP3 over SSL/TLS)
-* **3306 (MySQL):** Popular database system
-* **5800, 5900 (VNC):**  Remote desktop access (graphical)
-* **1433 (MSSQL):** Microsoft SQL Server database. Attackers scan, look for weak configurations.
-* **88 (Kerberos):** Network Authentiation Protocol. Used in Microsoft AD
-* **111 (rpcbind):** Used for mapping RPC services to ports
-* **512-514 (Rexec, Rlogin, Rsh):** Old, insecure remote execution and login (avoid!)
-* **636 (LDAP over SSL/TLS):** Secure Directory Access
-* **873 (rsync):** File synchronization tool
-  
 
 
 
