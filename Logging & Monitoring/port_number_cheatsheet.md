@@ -35,8 +35,8 @@
 **Specialized Ports**
 * **8080 (HTTP - Alternative):** A very common alternative port for web servers. This is often used for testing websites during development or for running secondary websites on the same machine as a primary website (which would typically be on port 80).  Also used by some web-based administration panels, making it a potential target for attacks
 * **2082/2083 (cPanel):** Ports commonly used by the cPanel web hosting control panel. cPanel provides a graphical interface for managing websites, emails, databases, and more. Knowing these ports helps identify servers likely running cPanel and its associated services.
-
-
+* **2222 (DirectAdmin):** Another popular web hosting control panel. Similar in function to cPanel, DirectAdmin provides tools for website and server management.  Attacks may target common control panel ports like this.
+* **5432 (PostgreSQL):** A robust, open-source database management system.  Like other database ports (MySQL, MSSQL), it can be a target for attacks. Configuration issues or outdated versions might have known exploits attackers use to scan for this port.
 
 
 **Additional Notes**
