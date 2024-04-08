@@ -19,3 +19,5 @@
 - **Event ID 7045:** A new service was installed. Can signify the presence of attacker-installed malware or tools disguised as system services.Event ID 1102: The audit log was cleared. Potentially a malicious act to hide traces of activity.
 - **Event ID 104:** The system time was changed. Attackers occasionally manipulate system time to confuse investigation timelines or to disrupt time-based security controls.
 - **Event ID 1102:** The audit log was cleared. Potentially a malicious act to hide traces of activity.
+- **Event ID 4698-4702:** Scheduled Task Created/Modified/Deleted: Backdoors might use scheduled tasks for persistence.
+- **Event ID 1:** Process creation: The process creation event provides extended information about a newly created process. The full command line provides context on the process execution.
