@@ -23,7 +23,7 @@
 
 ## Detecting Backdoors
 - **Event ID 4657:** If a registry key value is modified, then event ID 4657 is logged. A subtle note of importance is that it is triggered only if a key value is modified, not the key itself.
-
+- **Event ID 12: RegistryEvent (Object create and delete)** Registry key and value create and delete operations map to this event type, which can be useful for monitoring for changes to Registry autostart locations, or specific malware registry modifications
 
 
 
