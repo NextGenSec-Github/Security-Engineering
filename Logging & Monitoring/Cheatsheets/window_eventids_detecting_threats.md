@@ -21,8 +21,8 @@
 - **Event ID 4732:** This event occurs whenever a member is added to a security-enabled local group. It helps in detecting privilege abuse by users who are responsible for unauthorized additions.
 - **Event ID 4756:** This event occurs whenever a member is added to a security-enabled universal group. It helps in detecting accidental additions.
 
-
-
+## Detecting Backdoors
+- **Event ID 4657:** If a registry key value is modified, then event ID 4657 is logged. A subtle note of importance is that it is triggered only if a key value is modified, not the key itself.
 
 
 
