@@ -20,5 +20,7 @@ DHCPv6 consists of several components, including:
 - **DHCPv6 Client:** DHCPv6 clients are devices that request IPv6 address configuration from DHCPv6 servers. Clients typically send solicit messages to discover DHCPv6 servers on the network and then request address assignment.
 - **DHCPv6 Relay Agent:** In networks with multiple subnets, DHCPv6 relay agents forward DHCPv6 messages between clients and servers. Relay agents are essential for ensuring that DHCPv6 messages reach the appropriate DHCPv6 server, even when clients and servers are on different subnets.
 
+## DHCPv6 Message Types
+1. **Solicit**: DHCPv6 clients broadcast ***solicit*** message to discover available DHCPv6 servers on the network.
 
 
