@@ -22,5 +22,6 @@ DHCPv6 consists of several components, including:
 
 ## DHCPv6 Message Types
 1. **Solicit**: DHCPv6 clients broadcast ***solicit*** message to discover available DHCPv6 servers on the network.
-
+2. **Advertise**: DHCPv6 servers respond to the ***solicit*** messages with ***advertise*** messages, offering IPv6 address configuration parameters to clients.
+3. **Request**: Clients use this to request IP addresses or prefixes from a specific DHCPv6 server.
 
