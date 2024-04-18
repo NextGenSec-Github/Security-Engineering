@@ -31,7 +31,8 @@ iface eth0 inet static
 - The auto lo and subsequent lines configure the loopback interface, which is used for local communication within the system.
 - The auto eth0 and subsequent lines configure the primary network interface, eth0, with a static IP address (192.168.1.100), netmask (255.255.255.0), and gateway (192.168.1.1).
 
-
+## ip addr show 
+The command "ip address show" (or its shorthand "ip a") is a powerful tool used in Linux systems to display information about network interfaces and their associated IP addresses. It provides detailed information about the networking configuration of the system.
 
 
 
