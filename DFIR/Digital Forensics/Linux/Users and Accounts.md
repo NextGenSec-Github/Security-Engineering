@@ -1,5 +1,5 @@
 ## User Accounts (/etc/passwd)
-The /etc/passwd file is a fundamental system file in Unix-like operating systems, including Linux. It stores essential information about user accounts on the system. Each line in the file represents a user account and is formatted with several fields separated by colons (:). Here's a typical structure of a line in /etc/passwd:
+The `/etc/passwd` file is a fundamental system file in Unix-like operating systems, including Linux. It stores essential information about user accounts on the system. Each line in the file represents a user account and is formatted with several fields separated by colons (:). Here's a typical structure of a line in /etc/passwd:
 
 ```bash
 username:password:UID:GID:GECOS:home_directory:login_shell
@@ -46,4 +46,8 @@ root    ALL=(ALL:ALL) ALL
 john    ALL=(ALL) NOPASSWD: /bin/ls
 ```
 
+**In this example:**
+- The first line grants the user root full privileges on all hosts.
+- The %admin, %sudo, and %wheel lines grant members of those groups full privileges.
+- The last line allows the user john to execute the /bin/ls command as root without being prompted for a password.
 
