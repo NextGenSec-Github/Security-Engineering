@@ -55,6 +55,27 @@ NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\
 # ShimCache: Is a mechanism used to keep track of application compatibility with the OS and tracks all applications launched on the machine
 SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 
+# AmCache: Stores additional data related to program executions
+C:\Windows\appcompat\Programs\Amcache.hve
+# Information about the last executed programs can be found at the following location in the hive:
+Amcache.hve\Root\File\{Volume GUID}\
+
+# Background Activty Monitor (BAM) and Desktop Activity Moderator (DAM)
+# BAM
+SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}
+# DAM
+SYSTEM\CurrentControlSet\Services\dam\UserSettings\{SID}
+
+# Device Identification: These locations store the vendor id, product id, and version of the USB device plugged in and can be used to identify unique devices. 
+# These locations also store the time the devices were plugged into the system.
+SYSTEM\CurrentControlSet\Enum\USBSTOR
+SYSTEM\CurrentControlSet\Enum\USB
+
+# Tracks the first time the device was connected, the last time it was connected and the last time the device was removed from the system.
+SYSTEM\CurrentControlSet\Enum\USBSTOR\Ven_Prod_Version\USBSerial#\Properties\{83da6326-97a6-4088-9453-a19231573b29}\{####}
+
+# The device name of the connected drive can be found at the following location:
+SOFTWARE\Microsoft\Windows Portable Devices\Devices
 
 
 
