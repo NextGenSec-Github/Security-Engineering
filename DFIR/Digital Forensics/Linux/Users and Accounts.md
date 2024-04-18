@@ -51,3 +51,12 @@ john    ALL=(ALL) NOPASSWD: /bin/ls
 - The %admin, %sudo, and %wheel lines grant members of those groups full privileges.
 - The last line allows the user john to execute the /bin/ls command as root without being prompted for a password.
 
+## Login Information (/var/log/...)
+In the /var/log directory, we can find log files of all kinds including wtmp and btmp.
+- **/var/log/btmp:** Records failed login attempts on the system. Each failed login attempt is logged in this file, along with information such as the username, source IP address, and timestamp of the attempt. May have this kind of format:
+```bash
+[timestamp] [source_ip] [username]
+```
+
+
+
