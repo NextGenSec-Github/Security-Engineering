@@ -57,6 +57,11 @@ In the /var/log directory, we can find log files of all kinds including wtmp and
 ```bash
 [timestamp] [source_ip] [username]
 ```
-
+- **/var/log/wtmp:** Records all user login and logout activity on the system. Each time a user logs in or out, an entry is made in this file, containing information such as the username, login/logout time, terminal name, and more. The /var/log/wtmp file is useful for tracking user activity on the system, including login times, session durations, and terminal usage. Here's an example of what you might see when using the last command to view the contents of the /var/log/wtmp file:
+```bash
+username  pts/1        Mon Apr 18 09:30   still logged in
+username  pts/0        Mon Apr 18 09:20   still logged in
+username  tty1         Mon Apr 18 09:10   still logged in
+```
 
 
