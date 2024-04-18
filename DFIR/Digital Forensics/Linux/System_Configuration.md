@@ -34,8 +34,23 @@ iface eth0 inet static
 ## ip addr show 
 The command "ip address show" (or its shorthand "ip a") is a powerful tool used in Linux systems to display information about network interfaces and their associated IP addresses. It provides detailed information about the networking configuration of the system.
 
+## Active Network Connections (netstat)
+It allows users to display various network-related information such as network connections, routing tables, interface statistics, and more. When you run the netstat command without any options, it typically displays a list of active network connections, both incoming and outgoing, along with their associated details such as protocol, local and remote addresses, and state. Here's an example output of netstat without any options:
+```bash
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp        0      0 192.168.1.100:22        192.168.1.101:54321     ESTABLISHED
+tcp        0      0 192.168.1.100:22        192.168.1.102:12345     ESTABLISHED
+udp        0      0 0.0.0.0:68              0.0.0.0:*                          
+```
 
-
+**In this output:**
+- The first column (Proto) indicates the protocol used (TCP or UDP).
+- The second column (Recv-Q) shows the size of the receive queue for the socket.
+- The third column (Send-Q) shows the size of the send queue for the socket.
+- The fourth column (Local Address) displays the local IP address and port.
+- The fifth column (Foreign Address) displays the remote IP address and port.
+- The sixth column (State) shows the state of the connection (e.g., LISTEN, ESTABLISHED).
 
 
 
