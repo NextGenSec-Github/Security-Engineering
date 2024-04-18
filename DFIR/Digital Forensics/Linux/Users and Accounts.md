@@ -64,4 +64,17 @@ username  pts/0        Mon Apr 18 09:20   still logged in
 username  tty1         Mon Apr 18 09:10   still logged in
 ```
 
+## Authentication logs (/var/log/auth.log)
+The `/var/log/auth.log`contains records related to authentication events on the system, such as login attempts, authentication failures, and other security-related activities. Here are some typical entries within this file:
+```bash
+Apr 19 10:25:34 hostname sshd[1234]: Accepted publickey for user from 192.168.1.100 port 12345 ssh2
+Apr 19 10:30:12 hostname sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Apr 19 10:35:21 hostname sshd[5678]: Failed password for invalid user admin from 203.0.113.10 port 54321 ssh2
+```
+**In this example:**
+- The first line indicates a successful SSH login using public key authentication.
+- The second line shows the opening of a sudo session for the root user.
+- The third line records a failed SSH login attempt with a password for a non-existent user (admin).
+
+
 
