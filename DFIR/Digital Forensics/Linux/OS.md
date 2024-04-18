@@ -1,5 +1,5 @@
-## OS release information
-The /etc/os-release file is a standard file found in many Linux distributions that contains information about the operating system. It's used to provide metadata about the distribution, including its name, version, and some other details
+## OS release information (etc/os-release)
+The /etc/os-release file is a standard file found in many Linux distributions that contains information about the operating system. It's used to provide metadata about the distribution, including its name, version, and some other details. The file typically follows a key-value pair format, where each line contains a variable assignment:
 
 | Field          | Description                                                |
 |----------------|------------------------------------------------------------|
