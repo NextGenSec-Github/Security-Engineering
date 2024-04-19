@@ -7,7 +7,7 @@ The `~/.bash_history` file is a hidden file located in the user's home directory
 The Bash history file is managed by the shell itself, which automatically appends new commands to the file as they are entered. By default, the history file retains a certain number of recent commands, as specified by the `HISTSIZE` and `HISTFILESIZE` environment variables.
 
 ## Files Accessed Using Vim (~/.viminfo)
-The ~/.viminfo file is a hidden file located in the user's home directory (~). It is used by the Vim text editor to store various information about Vim sessions, such as the history of commands, search patterns, marks, and other settings.
+The /.viminfo file is a hidden file located in the user's home directory (~). It is used by the Vim text editor to store various information about Vim sessions, such as the history of commands, search patterns, marks, and other settings.
 Here's an example of what you might find in a ~/.viminfo file:
 ```bash
 # This is a Viminfo file!
