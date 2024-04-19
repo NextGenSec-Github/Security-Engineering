@@ -27,3 +27,7 @@ MAILTO=root
 47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 ```
+The /etc/crontab file is typically used for system-wide scheduled tasks that are not associated with a specific user. Individual users can also set up their own cron jobs using the crontab command to manage their personal crontab files.
+
+## Service Startup
+
