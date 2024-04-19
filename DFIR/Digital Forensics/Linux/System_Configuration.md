@@ -52,9 +52,25 @@ udp        0      0 0.0.0.0:68              0.0.0.0:*
 - The fifth column (Foreign Address) displays the remote IP address and port.
 - The sixth column (State) shows the state of the connection (e.g., LISTEN, ESTABLISHED).
 
+## Running Processes (ps)
+The `ps` command is used for displaying information about running processes on a system. It stands for "process status." When you run ps without any options, it typically lists the processes associated with the current terminal session. Here's an example output of ps without any options:
+```bash
+  PID TTY          TIME CMD
+ 3723 pts/0    00:00:00 bash
+ 3764 pts/0    00:00:00 ps
+```
 
+**In this output:**
+- The first column (PID) displays the process ID, a unique identifier for each running process.
+- The second column (TTY) shows the terminal associated with the process.
+- The third column (TIME) indicates the cumulative CPU time consumed by the process.
+- The fourth column (CMD) displays the command name or the command-line arguments used to start the process.
 
-
+### Extra Commands:
+- `ps aux` or `ps -ef`: Displays a detailed list of all processes running on the system.
+- `ps -e`: Shows a list of all processes regardless of terminal association.
+- `ps -u username`: Displays processes owned by a specific user.
+- `ps -f`: Provides a full-format listing with more detailed information about each process.
 
 
 
