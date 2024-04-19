@@ -31,6 +31,27 @@ iface eth0 inet static
 - The auto lo and subsequent lines configure the loopback interface, which is used for local communication within the system.
 - The auto eth0 and subsequent lines configure the primary network interface, eth0, with a static IP address (192.168.1.100), netmask (255.255.255.0), and gateway (192.168.1.1).
 
+# DNS Information
+ It serves as a local DNS (Domain Name System) resolver, mapping hostnames to IP addresses. Essentially, it allows you to manually define hostname-to-IP address mappings without relying on a DNS server. Here's a typical example of what you might find in an /etc/hosts file:
+
+```bash
+127.0.0.1       localhost
+::1             localhost ip6-localhost ip6-loopback
+192.168.1.100   myhost.example.com myhost
+```
+
+**In this example:**
+
+- The first two lines specify mappings for the loopback interface (localhost) for both IPv4 and IPv6.
+- The third line maps the IP address 192.168.1.100 to the hostname myhost.example.com, with an additional alias myhost.
+
+### The /etc/hosts file is commonly used for various purposes, including:
+
+**Local hostname resolution:** Mapping local hostnames to IP addresses, enabling applications to communicate with services running on the same system.
+**DNS override:** Providing manual DNS entries that override DNS server resolution for specific hostnames. This can be useful for testing or accessing internal services without relying on public DNS servers.
+**Blocking or redirecting:** Redirecting certain hostnames to alternative IP addresses, such as blocking access to certain websites by redirecting them to localhost.
+
+
 ## ip addr show 
 The command "ip address show" (or its shorthand "ip a") is a powerful tool used in Linux systems to display information about network interfaces and their associated IP addresses. It provides detailed information about the networking configuration of the system.
 
