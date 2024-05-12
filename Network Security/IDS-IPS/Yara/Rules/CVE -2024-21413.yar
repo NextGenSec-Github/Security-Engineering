@@ -4,8 +4,6 @@ rule EXPL_CVE_2024_21413_Microsoft_Outlook_RCE_Feb24 {
 
       description = "Detects emails that contain signs of a method to exploit CVE-2024-21413 in Microsoft Outlook"
 
-      author = "X__Junior, Florian Roth"
-
       reference = "https://github.com/xaitax/CVE-2024-21413-Microsoft-Outlook-Remote-Code-Execution-Vulnerability/"
 
       date = "2024-02-17"
