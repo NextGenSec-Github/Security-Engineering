@@ -76,5 +76,54 @@ cd /etc/systemd/system # Check for any sus initialization services
 select username, directory from users; # Look for any backdoor accounts
 cut -d  : -f1 /etc/passwd # List down names from /etc/passwd
 
+# LOG INVESTIGATION
+dmesg # Kernel Logs: /var/log/dmesg
+sudo dmesg -T | grep 'custom_kernel'
+sudo tail -f /var/log/auth.log
+grep 'Accepted password' /var/log/auth.log # Successful Authentication Logs
+grep 'sudo' /var/log/auth.log # Tracking actions with elevate privileges
+grep 'CRON' /var/log/syslog # Cron job executions
+grep 'kernel' /var/log/syslog # Kernel related messages
+/var/log/btmp # Failed login attempts
+/var/log/wtmp # Successful login attempts
+/etc/rsyslog.d/50-default.conf # Default syslog config file, Controls how messages are logged
+journalctl
+/etc/systemd/journald.conf # JournalCTL conf
+sudo grep -i "failure" /var/log/auth.log # Failed login attempts
+sudo grep -i "session opened" /var/log/auth.log # Sessions opened
+sudo awk '/2024-06-04 15:30:00/,/2024-06-05 15:29:59/' /var/log/auth.log # To filter auth logs by a specific date and time range, we can use awk
+sudo grep "$(date --date='2 hours ago' '+%b %e %H:')" /var/log/auth.log # To filter entries from the last few hours, we can use tail in combination with grep and date
+/var/log/apache2/access.log # Apache access logs
+/var/log/apache2/error.log # Apache Error logs
+/etc/apache2/apache2.conf # Apache log config file
+grep "10.10.24.106" /var/log/apache2/access.log* # Filtering for access requests from a specific host
+grep "404" /var/log/apache2/access.log* # Find any 404 Errors
+grep "error" /var/log/apache2/error.log* # Find server errors
+awk '{print $1}' /var/log/apache2/access.log* | sort | uniq -c | sort -nr # Counting requests from hosts
+awk '{print $9}' /var/log/apache2/access.log* | sort | uniq -c | sort -nr # Summarize http status codes from logs
+
+
+# Auditd
+/etc/audit/audit.rules # Auditd rules conf file
+sudo auditctl -a always,exit -F arch=b64 -S execve -k execve_syscalls # logs every program execution through the execve system call on a 64-bit architecture (arch=b64) and tags these events with the key execve_syscall
+sudo auditctl -w /etc/passwd -p wra -k users # Watches the /etc/passwd file for write, read, and change attributes and tag it as 'users'
+/var/log/audit/audit.log # Audit logs file
+sudo ausearch -k users # Searching for logs with the key we associated our audit logs with in our auditd rules
+sudo ausearch -k execve_syscalls
+sudo ausearch -k users | aureport -f user-logs # Get a report of the logs
+
+# JOURNALCTL
+journalctl -f # Follow the journal and show new entries as they are added
+journalctl -k # Show messages from a specific boot.	
+journalctl -u apache.service # Filter messages by a specific unit.
+journalctl -p err # filter messages by priority
+journalctl -S "2021-05-24 14:08:01" # Show messages since a specific time.	
+journalctl -U "2021-05-24 15:46:01" # Show messages until a specific time.	
+journalctl -r # Reverse the output, showing the newest entries first.	
+journalctl -n 20 # Limit the number of shown lines.	
+journalctl --no-pager # Do not pipe the output into a pager.	
+
+
+
 
 
